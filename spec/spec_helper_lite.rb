@@ -1,4 +1,5 @@
 require 'rr'
+require 'date'
 
 class MiniTest::Unit::TestCase
   include RR::Adapters::MiniTest

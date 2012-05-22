@@ -51,6 +51,7 @@ describe Post do
     before do
       @blog = MiniTest::Mock.new
       @it.blog = @blog
+      @it.title = "x"
     end
 
     after do
@@ -89,6 +90,7 @@ describe Post do
         @now = DateTime.parse("2011-09-11T02:56")
         stub(@clock).now(){@now}
         @it.blog = stub!
+        @it.title = "x"
         @it.publish(@clock)
       end
 
@@ -97,7 +99,7 @@ describe Post do
       end
 
       it "is the current time" do
-        @it.pubdate.must_be_nil(@now)
+        @it.pubdate.must_equal(@now)
       end
     end
   end

@@ -1,6 +1,5 @@
 require 'minitest/autorun'
 require 'ostruct'
-require 'date'
 require_relative '../spec_helper_lite'
 require_relative '../../app/models/blog'
 describe Blog do
@@ -23,7 +22,7 @@ describe Blog do
     end
 
     it "sets the post's blog reference to itself" do
-      @it.new_post.blog.must_equal(@blog)
+      @it.new_post.blog.must_equal(@it)
     end
 
     it "accepts an attribute hash on behalf of the post maker" do
